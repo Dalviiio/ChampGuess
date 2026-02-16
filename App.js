@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import * as ScreenOrientation from 'expo-screen-orientation';
 import HomeScreen from "./screens/HomeScreen";
 import GameScreen from "./screens/GameScreen";
 import ScoreScreen from "./screens/ScoreScreen";
@@ -6,6 +7,14 @@ import ScoreScreen from "./screens/ScoreScreen";
 export default function App() {
     const [screen, setScreen] = useState("home");
     const [score, setScore] = useState(0);
+
+
+    useEffect(() => {
+        async function lock() {
+            await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
+        }
+        lock();
+    }, []);
 
     const startGame = () => setScreen("game");
     const endGame = (finalScore) => {
