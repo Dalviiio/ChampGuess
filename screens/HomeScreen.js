@@ -19,7 +19,7 @@ export default function HomeScreen({ onStart }) {
                     <Text style={styles.buttonText}>LANCER LA PARTIE</Text>
                 </TouchableOpacity>
 
-                <Text style={styles.footerLeft}>v0.0.1</Text>
+                <Text style={styles.footerLeft}>v1.0.0</Text>
                 <Text style={styles.footerRight}>Dev by Dalviiio</Text>
 
             </View>
