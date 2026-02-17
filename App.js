@@ -8,12 +8,8 @@ export default function App() {
     const [screen, setScreen] = useState("home");
     const [score, setScore] = useState(0);
 
-
     useEffect(() => {
-        async function lock() {
-            await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
-        }
-        lock();
+        ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
     }, []);
 
     const startGame = () => setScreen("game");
